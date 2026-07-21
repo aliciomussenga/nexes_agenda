@@ -49,7 +49,7 @@ class AvailabilityService
     }
 
     /**
-     * @param Collection<int, Appointment> $appointments
+     * @param  Collection<int, Appointment>  $appointments
      */
     private function overlaps(CarbonImmutable $start, CarbonImmutable $end, Collection $appointments): bool
     {

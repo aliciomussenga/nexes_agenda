@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('services', [ServiceController::class, 'index']);
 Route::get('services/{service}/availability', [AppointmentController::class, 'availability']);
 
-Route::middleware('auth')->group(function (): void {
+Route::middleware('auth:sanctum')->group(function (): void {
     Route::apiResource('admin/services', ServiceManagementController::class)->parameters([
         'services' => 'service',
     ]);

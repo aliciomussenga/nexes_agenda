@@ -5,15 +5,12 @@ namespace App\Services;
 use App\Models\Appointment;
 use App\Models\Service;
 use Carbon\CarbonImmutable;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
 
 class AppointmentService
 {
-    public function __construct(private readonly AvailabilityService $availabilityService)
-    {
-    }
+    public function __construct(private readonly AvailabilityService $availabilityService) {}
 
     public function create(int $userId, int $serviceId, CarbonImmutable $startTime): Appointment
     {
