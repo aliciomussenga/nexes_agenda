@@ -50,4 +50,14 @@ class User extends Authenticatable implements PasskeyUser
             /* @end-chisel-2fa */
         ];
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isClient(): bool
+    {
+        return $this->role === 'client';
+    }
 }
