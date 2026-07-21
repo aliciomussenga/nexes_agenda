@@ -22,6 +22,16 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Reservas',
+        href: '/reservas',
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Serviços',
+        href: '/servicos',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [

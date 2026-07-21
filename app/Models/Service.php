@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 #[Fillable(['owner_id', 'name', 'duration_minutes', 'price_cents', 'is_active'])]
 class Service extends Model
 {
+    protected function casts(): array
+    {
+        return [
+            'price_cents' => 'integer',
+            'duration_minutes' => 'integer',
+            'is_active' => 'boolean',
+        ];
+    }
+
     public function owner(): BelongsTo
     {
         return $this->belongsTo(User::class, 'owner_id');
