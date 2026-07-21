@@ -36,8 +36,10 @@
 
         @fonts
 
-        @viteReactRefresh
-        @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+        @if (file_exists(public_path('build/manifest.json')))
+            @viteReactRefresh
+            @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+        @endif
         <x-inertia::head>
             <title>{{ config('app.name', 'Laravel') }}</title>
         </x-inertia::head>
